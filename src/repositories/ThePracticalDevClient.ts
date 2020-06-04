@@ -1,7 +1,25 @@
 import axios, { AxiosInstance } from 'axios'
-import { ArticleIndex, ArticleCreate, ArticleShow, ArticleUpdate, ArticleMe } from '../interfaces/responses/models'
+import { PageParam, CommentsQuery } from '../interfaces/parameters/shared'
 import { ListArticlesQuery } from '../interfaces/parameters/ListArticlesQuery'
-import { PageParam } from '../interfaces/parameters/shared'
+import {
+  ArticleIndex,
+  ArticleCreate,
+  ArticleShow,
+  ArticleUpdate,
+  ArticleMe,
+  ArticleVideo,
+  Comment,
+  Listing,
+  ListingCreate,
+  ListingCategory,
+  ListingUpdate,
+  PodcastEpisode,
+  Tag,
+  User,
+  WebhookIndex,
+  WebhookCreate,
+  WebhookShow
+} from '../interfaces/responses/models'
 
 export class ThePracticalDevClient {
   private readonly client: AxiosInstance
@@ -37,5 +55,80 @@ export class ThePracticalDevClient {
 
   async selfPublishedArticles (query: PageParam) {
     return this.client.get<ArticleMe[]>('/articles/me/published', { params: query })
+  }
+
+  async selfUnpublishedArticles (query: PageParam) {
+    return this.client.get<ArticleMe[]>('/articles/me/unpublished', { params: query })
+  }
+  async selfAllArticles (query: PageParam) {
+    return this.client.get<ArticleMe[]>('/articles/me/all', { params: query })
+  }
+
+  async listArticleComments (query: CommentsQuery) {
+    return this.client.get<ArticleVideo[]>('/videos', { params: query })
+  }
+
+  async getComment (commentId: string) {
+    return this.client.get<Comment[]>(`/comments/${commentId}`)
+  }
+
+  async listListings (query: PageParam) {
+    return this.client.get<Listing[]>(`/listings`, { params: query })
+  }
+
+  async createListing (payload: ListingCreate) {
+    return this.client.post<Listing>(`/listings`, payload)
+  }
+
+  async getListingByCategory (category: ListingCategory, query: PageParam) {
+    return this.client.get<Listing[]>(`/listings/category/${category}`, { params: query })
+  }
+
+  async getListingById (listingId: string) {
+    return this.client.get<Listing>(`/listings/${listingId}`)
+  }
+
+  async updateListing (payload: ListingUpdate, id: string) {
+    return this.client.put<ArticleShow>(`/listings/${id}`, payload)
+  }
+
+  async getPodcastEpisodes (query: PageParam) {
+    return this.client.get<PodcastEpisode[]>(`/podcast_episodes`, { params: query })
+  }
+
+  async getArticleTags (query: PageParam) {
+    return this.client.get<Tag[]>(`/tags`, { params: query })
+  }
+
+  async getUserById (userId: number) {
+    return this.client.get<User>(`/users/${userId}`)
+  }
+
+  async getUserByName (username: string) {
+    return this.client.get<User>(`/users/by_username`, { params: { url: username } })
+  }
+
+  async getSelfInformation () {
+    return this.client.get<User>(`/users/me`)
+  }
+
+  async getArticlesWithVideo (query: PageParam) {
+    return this.client.get<ArticleVideo[]>(`/videos`, { params: query })
+  }
+
+  async getWebhooks () {
+    return this.client.get<WebhookIndex[]>(`/webhooks`)
+  }
+
+  async createWebhook (payload: WebhookCreate) {
+    return this.client.post<WebhookShow>(`/webhooks`, payload)
+  }
+
+  async getWebhookById (id: number) {
+    return this.client.get<WebhookShow>(`/webhooks/${id}`)
+  }
+
+  async deleteWebhook (id: number) {
+    return this.client.delete<void>(`/webhooks/${id}`)
   }
 }

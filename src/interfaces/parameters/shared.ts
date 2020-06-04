@@ -8,3 +8,7 @@ export enum StateTypes {
   ALL = 'all',
   RISING = 'rising'
 }
+
+export interface CommentsQuery {
+  a_id: number
+}
