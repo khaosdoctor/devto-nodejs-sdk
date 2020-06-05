@@ -6,7 +6,6 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "test": "echo 0",
-    "coverage": "nyc mocha --require ts-node/register --require source-map-support/register --recursive tests/**/*.test.ts",
     "lint": "tslint --project tsconfig.json",
     "lint:fix": "tslint --fix --project tsconfig.json",
     "build": "tsc",
