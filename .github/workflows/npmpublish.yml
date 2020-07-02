@@ -32,6 +32,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Install Dependencies
         run: npm ci
+      - name: Build source
+        run: npm run build
       - name: Publish Package
         uses: JS-DevTools/npm-publish@v1
         with:
