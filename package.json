@@ -1,6 +1,6 @@
 {
   "name": "devto-nodejs-sdk",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "The Dev.to Node.js SDK",
   "main": "dist/index.js",
   "scripts": {
