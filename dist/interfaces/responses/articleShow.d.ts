@@ -1,0 +1,31 @@
+import { ArticleFlareTag } from './articleFlareTag';
+import { SharedOrganization } from './sharedOrganization';
+import { SharedUser } from './sharedUser';
+export interface ArticleShow {
+    _typeOf: string;
+    id: number;
+    title: string;
+    description: string;
+    coverImage: string;
+    readablePublishDate: string;
+    socialImage: string;
+    tagList: string;
+    tags: Array<string>;
+    slug: string;
+    path: string;
+    url: string;
+    canonicalUrl: string;
+    commentsCount: number;
+    positiveReactionsCount: number;
+    createdAt: Date;
+    editedAt: Date;
+    crosspostedAt: Date;
+    publishedAt: Date;
+    lastCommentAt: Date;
+    publishedTimestamp: Date;
+    bodyHtml: string;
+    bodyMarkdown: string;
+    user: SharedUser;
+    organization?: SharedOrganization;
+    flareTag?: ArticleFlareTag;
+}
