@@ -24,6 +24,8 @@ const { data } = await client.getUserByName('khaosdoctor')
 
 The client itself is just a proxy of the original API.
 
+> If the API changes and you notice it, please submit an [issue](https://github.com/khaosdoctor/devto-nodejs-sdk/issues/new?title=Dev.to API has Changed) or, if you already know what changed, please submit a [PR](https://github.com/khaosdoctor/devto-nodejs-sdk/compare)
+
 ## API
 
 All provided APIs in the [official docs](https://docs.dev.to/api/) are provided as part of the API as well, these are the translated names for these endpoints:
