@@ -24,7 +24,7 @@ const { data } = await client.getUserByName('khaosdoctor')
 
 The client itself is just a proxy of the original API.
 
-> If the API changes and you notice it, please submit an [issue](https://github.com/khaosdoctor/devto-nodejs-sdk/issues/new?title=Dev.to API has Changed) or, if you already know what changed, please submit a [PR](https://github.com/khaosdoctor/devto-nodejs-sdk/compare)
+> If the API changes and you notice it, please submit an [issue](https://github.com/khaosdoctor/devto-nodejs-sdk/issues/new?title=Dev.to%20API%20has%20Changed) or, if you already know what changed, please submit a [PR](https://github.com/khaosdoctor/devto-nodejs-sdk/compare)
 
 ## API
 
