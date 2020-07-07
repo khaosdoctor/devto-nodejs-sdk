@@ -2,8 +2,6 @@
 
 > The Node.js SDK for @thepracticaldev
 
-**Note**: This project is in very early stages, but it's suited for production.
-
 ## Installation
 
 Install it via your favorite package manager:
