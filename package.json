@@ -53,6 +53,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "axios-case-converter": "^0.7.0"
   }
 }
