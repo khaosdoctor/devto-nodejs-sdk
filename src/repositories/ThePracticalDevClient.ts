@@ -1,4 +1,5 @@
 import axios, { AxiosInstance } from 'axios'
+import applyCaseMiddleware from 'axios-case-converter';
 import { PageParam, CommentsQuery } from '../interfaces/parameters/shared'
 import { ListArticlesQuery } from '../interfaces/parameters/ListArticlesQuery'
 import {
@@ -25,12 +26,12 @@ export class ThePracticalDevClient {
   private readonly client: AxiosInstance
 
   constructor (private readonly APIKey: string) {
-    this.client = axios.create({
+    this.client = applyCaseMiddleware(axios.create({
       baseURL: 'https://dev.to/api',
       headers: {
         'api-key': this.APIKey
       }
-    })
+    }))
   }
 
   async listArticles (query: ListArticlesQuery) {
