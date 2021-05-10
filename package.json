@@ -8,7 +8,6 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist",
-    "test": "echo 0",
     "lint": "tslint --project tsconfig.json",
     "lint:fix": "tslint --fix --project tsconfig.json",
     "build": "tsc",
@@ -18,8 +17,7 @@
     "postinstall": "./node_modules/.bin/gitmoji -i"
   },
   "husky": {
-    "pre-commit": "npm run lint",
-    "pre-push": "npm run test"
+    "pre-commit": "npm run lint"
   },
   "repository": {
     "type": "git",
