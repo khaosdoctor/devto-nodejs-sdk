@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from 'axios'
-import applyCaseMiddleware from 'axios-case-converter';
+import applyCaseMiddleware from 'axios-case-converter'
 import { PageParam, CommentsQuery } from '../interfaces/parameters/shared'
 import { ListArticlesQuery } from '../interfaces/parameters/ListArticlesQuery'
 import {
