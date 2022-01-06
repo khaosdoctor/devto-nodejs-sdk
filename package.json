@@ -13,8 +13,7 @@
     "build": "tsc",
     "build:debug": "npm run clean && npm run build -- --sourceMap",
     "build:clean": "npm run clean && npm run build",
-    "build:watch": "tsc -w",
-    "postinstall": "./node_modules/.bin/gitmoji -i"
+    "build:watch": "tsc -w"
   },
   "husky": {
     "pre-commit": "npm run lint"
@@ -44,7 +43,6 @@
     "@types/node": "^15.0.2",
     "@types/sinon": "^10.0.0",
     "chai": "^4.3.4",
-    "gitmoji-cli": "^4.0.0",
     "husky": "^4.3.8",
     "nock": "^12.0.3",
     "nyc": "^15.1.0",
